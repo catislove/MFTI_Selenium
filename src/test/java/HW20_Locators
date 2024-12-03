@@ -1,0 +1,26 @@
+    //CSS Locators
+        By.cssSelector("#my-text-id"))   //Id
+        By.cssSelector(".form-control")) //Class name
+        By.cssSelector("[name='my-password']") //Name
+        By.cssSelector("input") //Tag
+        By.cssSelector(("[value ='Readonly input']")) //Attribute
+        By.cssSelector("input.form-control") //Tag + Class
+        By.cssSelector("input#my-text-id") //Tag + Id
+        By.cssSelector("input[value ='Readonly input']") //Tag + Attribute
+        By.cssSelector(".col-md-4.py-2") //Class + Class
+        By.cssSelector("[action^='submitted']") //Prefix
+        By.cssSelector("[action$='html']") //Suffix
+        By.cssSelector("[action*='-form']") //Substring
+        By.cssSelector("form[action='submitted-form.html']") //Exact match
+        By.cssSelector("div.col-12 h1[class='display-6']") //Child (потомок)
+        By.cssSelector("div.form-check label:nth-child(2) input") //Nth-child (n-й потомок)
+
+    //XPath Locators
+        By.xpath("/html/body/main/div/form/div/div[1]/label[1]/input") //По абсолютному пути
+        By.xpath("//*[@id='my-text-id']") //По относительному пути
+        By.xpath("//h5") //По тегу
+        By.xpath("//h1[text()='Hands-On Selenium WebDriver with Java']") //По тексту элемента
+        By.xpath("//h1[contains(text(), 'Hands-On Selenium WebDriver')]") //По частичному тексту
+        By.xpath("//*[@id='my-text-id']") //По атрибуту
+        By.xpath("//label/input[@type='checkbox']") //По потомку
+        By.xpath("//input[@name='my-file']/..") //По предку

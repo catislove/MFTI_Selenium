@@ -6,15 +6,15 @@ import static org.junit.jupiter.api.Assertions.*;
 public class SimpleJUnitTests {
     @Test
     void simpleJUnitTest() {
-        // Р—РґРµСЃСЊ СЂР°Р·РјРµС‰Р°РµРј РєРѕРґ С‚РµСЃС‚Р°
+        // Здесь размещаем код теста
         int actualSum = 2 + 2;
         int expectedSum = 4;
-        // РСЃРїРѕР»СЊР·СѓРµРј assertTrue, assertFalse,  assertEquals Рё РґСЂСѓРіРёРµ РјРµС‚РѕРґС‹ Assertions
+        // Используем assertTrue, assertFalse,  assertEquals и другие методы Assertions
         assertEquals(expectedSum, actualSum);
     }
 
     @Test
-    @Disabled //С‚РµСЃС‚ РЅРµ Р±СѓРґРµС‚ Р·Р°РїСѓС‰РµРЅ,  РІ РѕС‚С‡РµС‚ РїРѕРїР°РґРµС‚ РєР°Рє ignored
+    @Disabled //тест не будет запущен,  в отчет попадет как ignored
     void disabledTest() {
         int actualSum = 2 + 2;
         int expectedSum = 4;
@@ -23,7 +23,7 @@ public class SimpleJUnitTests {
     }
 
     @Test
-    @DisplayName("РЎР»РѕР¶РµРЅРёРµ РґРІСѓС… С‡РёСЃРµР»")
+    @DisplayName("Сложение двух чисел")
     void titleTest() {
         int actualSum = 2 + 2;
         int expectedSum = 4;
@@ -35,7 +35,7 @@ public class SimpleJUnitTests {
     void tagTest() {
         int actualSum = 2 + 2;
         int expectedSum = 4;
-        assertEquals(expectedSum, actualSum, "РЎСѓРјРјС‹ РґРѕР»Р¶РЅС‹ Р±С‹С‚СЊ СЂР°Р·РЅС‹РјРё");
+        assertEquals(expectedSum, actualSum, "Суммы должны быть разными");
     }
 
     @Test
@@ -48,8 +48,8 @@ public class SimpleJUnitTests {
         assertEquals(expectedSum, actualSum);
     }
 
-    @RepeatedTest(value = 3, name = "{displayName} - РїРѕРІС‚РѕСЂРµРЅРёРµ {currentRepetition} РёР· {totalRepetitions}")
-    @DisplayName("РЎР»РѕР¶РµРЅРёРµ РґРІСѓС… С‡РёСЃРµР»")
+    @RepeatedTest(value = 3, name = "{displayName} - повторение {currentRepetition} из {totalRepetitions}")
+    @DisplayName("Сложение двух чисел")
     void repeatedTest() {
         int actualSum = 2 + 2;
         int expectedSum = 4;
@@ -76,18 +76,18 @@ public class SimpleJUnitTests {
     void assertsAllTest() {
         User user = new User("John", "Doe", 30);
         assertAll(
-                () -> assertEquals("John", user.getFirstName(), "РќРµРїСЂР°РІРёР»СЊРЅРѕРµ РёРјСЏ"),
-                () -> assertEquals("Doe", user.getLastName(), "РќРµРїСЂР°РІРёР»СЊРЅР°СЏ С„Р°РјРёР»РёСЏ"),
-                () -> assertEquals(30, user.getAge(), "РќРµРїСЂР°РІРёР»СЊРЅС‹Р№ РІРѕР·СЂР°СЃС‚")
+                () -> assertEquals("John", user.getFirstName(), "Неправильное имя"),
+                () -> assertEquals("Doe", user.getLastName(), "Неправильная фамилия"),
+                () -> assertEquals(30, user.getAge(), "Неправильный возраст")
         );
     }
 
     @Test
     void AssertAllSeparate() {
         User user = new User("John", "Doe", 30);
-        assertEquals("John1", user.getFirstName(), "РќРµРїСЂР°РІРёР»СЊРЅРѕРµ РёРјСЏ");
-        assertEquals("Doe2", user.getLastName(), "РќРµРїСЂР°РІРёР»СЊРЅР°СЏ С„Р°РјРёР»РёСЏ");
-        assertEquals(31, user.getAge(),  "РќРµРїСЂР°РІРёР»СЊРЅС‹Р№ РІРѕР·СЂР°СЃС‚");
+        assertEquals("John1", user.getFirstName(), "Неправильное имя");
+        assertEquals("Doe2", user.getLastName(), "Неправильная фамилия");
+        assertEquals(31, user.getAge(),  "Неправильный возраст");
     }
 
     @Test

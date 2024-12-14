@@ -1,6 +1,10 @@
 package testdata;
 
+import models.Item;
+import models.Items;
 import models.User;
+
+import java.util.List;
 
 public class ApiTestData {
     public static final User USER_FOR_POST = new User(0, "userforpost", "firstName", "lastName", "email@gmail.com", "qwerty", "12345678", 0);
@@ -23,5 +27,9 @@ public class ApiTestData {
     public static final User TEST = User.builder()
             .id(1)
             .username("test")
+            .build();
+
+    public static final Items JEANS_ITEM = Items.builder()
+            .items(List.of(new Item("0042134551", 1, null)))
             .build();
 }

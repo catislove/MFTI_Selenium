@@ -85,9 +85,9 @@ public class SimpleJUnitTests {
     @Test
     void AssertAllSeparate() {
         User user = new User("John", "Doe", 30);
-        assertEquals("John1", user.getFirstName(), "Неправильное имя");
-        assertEquals("Doe2", user.getLastName(), "Неправильная фамилия");
-        assertEquals(31, user.getAge(),  "Неправильный возраст");
+        assertEquals("John", user.getFirstName(), "Неправильное имя");
+        assertEquals("Doe", user.getLastName(), "Неправильная фамилия");
+        assertEquals(30, user.getAge(),  "Неправильный возраст");
     }
 
     @Test

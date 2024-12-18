@@ -23,7 +23,7 @@ public class ParametrizedTests {
     @ParameterizedTest
     @CsvSource({"John, Doe", "Alice, Smith"})
     void csvTest(String firstName, String lastName) {
-        List<String> expectedPeople = Arrays.asList("John Doe1", "Alice Smith");
+        List<String> expectedPeople = Arrays.asList("John Doe", "Alice Smith");
         assertTrue(expectedPeople.contains(firstName + " " + lastName));
     }
 

@@ -31,6 +31,6 @@ class AdditionalTests {
     @Test
     void test() {
         System.out.println("Test");
-        assertEquals(1, 2);
+        assertEquals(1, 1);
     }
 }

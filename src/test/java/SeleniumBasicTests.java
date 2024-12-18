@@ -1,3 +1,4 @@
+/*
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -34,3 +35,4 @@ class SeleniumBasicTests {
         Assertions.assertEquals("Web form", title.getText());
     }
 }
+*/

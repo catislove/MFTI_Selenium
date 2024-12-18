@@ -12,7 +12,7 @@ class SeleniumBasicTests {
     @BeforeEach
     void start() {
         driver = new ChromeDriver();
-        driver.get(BASE_URL);
+        driver.get("https://bonigarcia.dev/selenium-webdriver-java/index.html");
     }
 
     @AfterEach

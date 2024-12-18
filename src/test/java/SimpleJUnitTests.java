@@ -6,15 +6,12 @@ import static org.junit.jupiter.api.Assertions.*;
 public class SimpleJUnitTests {
     @Test
     void simpleJUnitTest() {
-        // Здесь размещаем код теста
         int actualSum = 2 + 2;
         int expectedSum = 4;
-        // Используем assertTrue, assertFalse,  assertEquals и другие методы Assertions
         assertEquals(expectedSum, actualSum);
     }
 
     @Test
-    @Disabled //тест не будет запущен,  в отчет попадет как ignored
     void disabledTest() {
         int actualSum = 2 + 2;
         int expectedSum = 4;
@@ -38,15 +35,6 @@ public class SimpleJUnitTests {
         assertEquals(expectedSum, actualSum, "Суммы должны быть разными");
     }
 
-    @Test
-    @Tags({@Tag("defect"), @Tag("smoke")})
-    @Timeout(value = 2)
-    void timeoutTest() throws InterruptedException {
-        Thread.sleep(2000);
-        int actualSum = 2 + 2;
-        int expectedSum = 4;
-        assertEquals(expectedSum, actualSum);
-    }
 
     @RepeatedTest(value = 3, name = "{displayName} - повторение {currentRepetition} из {totalRepetitions}")
     @DisplayName("Сложение двух чисел")

@@ -1,5 +1,6 @@
 package steps;
 
+import com.google.common.io.Files;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
@@ -15,11 +16,19 @@ import org.openqa.selenium.WebDriver;
 
 import java.io.*;
 
+import static com.codeborne.selenide.Screenshots.takeScreenShotAsFile;
+
 public class HW24_AllureSteps {
     @Attachment(value = "Screenshot", type = "image/png")
     @Step("Capture screenshot")
     public byte[] captureScreenshot(WebDriver driver) {
         return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+    }
+
+    @Attachment(value = "Screenshot", type = "image/png")
+    @Step("Capture screenshot with Selenide")
+    public byte[] captureScreenshotSelenide() throws IOException {
+        return Files.toByteArray(takeScreenShotAsFile());
     }
 
     @Step("Capture screenshot (spoiler)")
@@ -30,6 +39,11 @@ public class HW24_AllureSteps {
     @Step("Capture screenshot (extension)")
     public void captureScreenshotSpoiler() {
         Allure.addAttachment("Screenshot", new ByteArrayInputStream(((TakesScreenshot) HW24_BaseSteps.getDriver()).getScreenshotAs(OutputType.BYTES)));
+    }
+
+    @Step("Capture screenshot with Selenide (extension)")
+    public void captureScreenshotSelenideSpoiler() throws IOException {
+        Allure.addAttachment("Screenshot", new ByteArrayInputStream(Files.toByteArray(takeScreenShotAsFile())));
     }
 
     @Step("Download file: {destination}")
@@ -64,7 +78,4 @@ public class HW24_AllureSteps {
             });
         }
     }
-
-
-
 }
